@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 def jit(fun, static_argnums=()):
   pass
 
