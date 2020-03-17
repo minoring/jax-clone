@@ -34,11 +34,12 @@ def canonicalize_dtype(dtype):
   else:
     return dtype
 
+
 @memoize
 def _canonicalize_dtype(dtype):
   """Convert from a dtype to a canonical dtype based on FLAGS.jax_enable_x64."""
   dtype = onp.dtype(dtype)
   if FLAGS.jax_enable_x64:
     return str(dtype)
-  else:
-    return str(_dtype_to_32bit_dtype.get(str(dtype), dtype))
+
+  return str(_dtype_to_32bit_dtype.get(str(dtype), dtype))
