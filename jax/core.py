@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class AbstractValue(object):
   __slots__ = []
 
@@ -11,8 +10,8 @@ class AbstractValue(object):
       return '{}({})'.format(self.__class__.__name__, ','.join(kv_pairs))
     except AttributeError:
       return self.__class__.__name__
-  
-=======
+
+
 skip_checks = True  # not __debug__
 
 
@@ -46,4 +45,3 @@ class Primitive(object):
   def impl(self, *args, **kwargs):
     raise NotImplementedError("Evaluation rule for '{}' not implemented".format(
         self.name))
->>>>>>> 7711521073fe4cabb0a1c3ed1923e014812185b5
