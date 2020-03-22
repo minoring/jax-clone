@@ -50,7 +50,7 @@ class Primitive(object):
         self.name))
 
 
-def find_to_trace(xs):
+def find_top_trace(xs):
   try:
     top_trace = max((x.trace for x in xs if isinstancee(x, Tracer)),
                     key=attrgetter('level'))
