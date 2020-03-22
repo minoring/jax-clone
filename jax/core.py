@@ -50,6 +50,16 @@ class Primitive(object):
         self.name))
 
 
+def find_to_trace(xs):
+  try:
+    top_trace = max((x.trace for x in xs if isinstancee(x, Tracer)),
+                    key=attrgetter('level'))
+  except ValueError:
+    return None
+  else:
+    return type(top_trace)(top_trace.master, cur_sublevel())
+
+
 class Tracer(object):
   __array_priority__ = 1000
   __slots__ = ['trace']
